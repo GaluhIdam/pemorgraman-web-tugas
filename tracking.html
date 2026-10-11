@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SITTA: simulasi informasi stok dan tracking distribusi bahan ajar Universitas Terbuka.">
+  <title>Tracking pengiriman | SITTA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/laporan.js" defer></script>
+  <script src="js/tracking.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+
+<body data-page="tracking">
+  <a class="skip" href="#main">Lewati navigasi</a>
+
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-icon" aria-hidden="true">S</span>
+      <span>SITTA<small>BAHAN AJAR · UT</small>
+      </span>
+    </a>
+    <p class="nav-label">RUANG KERJA</p>
+
+    <nav aria-label="Menu utama">
+      <a href="dashboard.html">
+        <span aria-hidden="true">◫</span>Ringkasan
+      </a>
+      <a href="stok.html">
+        <span aria-hidden="true">▤</span>Informasi bahan ajar</a>
+      <a href="tracking.html" aria-current="page"><span aria-hidden="true">↗</span>Tracking pengiriman</a>
+
+      <details class="nav-report">
+        <summary>
+          <span aria-hidden="true">▥</span> Laporan
+        </summary>
+        <button data-report="monitoring">Monitoring progress DO</button>
+        <button data-report="rekap">Rekap bahan ajar
+        </button>
+      </details>
+
+      <button data-report="histori"><span aria-hidden="true">◷</span>Histori transaksi</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="side-note">
+        <strong>Belajar tanpa batas.</strong>
+        <p>Bahan ajar yang tepat, sampai ke tujuan.</p>
+      </div>
+      <button id="logout" class="logout">
+        Keluar akun <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar"><span>Universitas Terbuka <span class="muted">/ Tracking pengiriman</span></span>
+      <div class="profile"><span class="avatar" aria-hidden="true" id="avatar">U</span>
+        <div>
+          <strong id="user-name">Pengguna</strong>
+          <small id="user-role">UT-Daerah</small>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">DISTRIBUSI / PENGIRIMAN</p>
+          <h1>Ikuti perjalanan bahan ajar<span class="gold">.</span></h1>
+          <p class="muted">Temukan informasi pengiriman menggunakan nomor Delivery Order.</p>
+        </div>
+      </section>
+
+      <section class="tracking-search card">
+        <form id="tracking-form" novalidate><label for="do-number">Nomor Delivery Order</label>
+          <div class="search-row">
+            <input id="do-number" name="nomorDO" placeholder="Contoh: 2023001234" inputmode="numeric" required
+              aria-describedby="tracking-error">
+            <button class="primary" type="submit">
+              Cari pengiriman <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <p id="tracking-error" class="error" role="alert"></p>
+        </form>
+        
+        <div class="sample-row">
+          <span>Coba nomor DO:</span>
+          <button class="chip" data-do="2023001234">2023001234</button>
+          <button class="chip" data-do="2023005678">2023005678</button>
+        </div>
+      </section>
+
+      <section id="tracking-empty" class="empty-state"><span class="empty-icon" aria-hidden="true">↗</span>
+        <h2>Setiap paket punya perjalanan.</h2>
+        <p>Masukkan nomor DO untuk melihat status dan riwayat pengiriman bahan ajar.</p>
+      </section>
+
+      <section id="tracking-result" aria-live="polite" hidden></section>
+    </main>
+
+    <footer>SITTA <span>Simulasi akademik · Tugas Praktik 1</span><span>HTML / CSS / JavaScript</span></footer>
+  </div>
+
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-head">
+      <h2 id="info-title">Informasi</h2><button type="button" class="icon-button" data-close
+        aria-label="Tutup dialog">x</button>
+    </div>
+    <div id="info-body"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+</body>
+
+</html>

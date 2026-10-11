@@ -1,0 +1,469 @@
+@media (min-width: 1500px) {
+  .hero-art {
+    right: 15%;
+  }
+
+  .login-intro {
+    padding-top: 60px;
+  }
+
+  .intro-copy {
+    margin-top: 95px;
+  }
+
+  .book-scene {
+    min-height: 340px;
+  }
+
+  .book {
+    width: 155px;
+    height: 226px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .sidebar {
+    width: 218px;
+    padding: 30px 16px;
+  }
+
+  .workspace {
+    margin-left: 218px;
+  }
+
+  .topbar {
+    padding: 16px 27px;
+  }
+
+  main:not(.login-layout) {
+    padding: 30px 27px;
+  }
+
+  .hero-art {
+    right: 1%;
+    transform: scale(0.85);
+    transform-origin: right center;
+  }
+
+  .hero {
+    padding: 28px;
+  }
+
+  .hero h2 {
+    font-size: 33px;
+  }
+
+  .status-dot {
+    display: none;
+  }
+
+  .stock-overview {
+    gap: 26px;
+  }
+
+  .stock-overview span {
+    display: block;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .topbar > span {
+    font-size: 10px;
+  }
+
+  footer {
+    padding: 20px 27px;
+  }
+}
+
+@media (max-width: 850px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sidebar .brand {
+    font-size: 21px;
+    margin: 0;
+  }
+
+  .brand-icon {
+    width: 35px;
+    height: 36px;
+    font-size: 27px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 18px;
+  }
+
+  .sidebar nav > a,
+  .sidebar nav > button,
+  .nav-report summary {
+    width: auto;
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .sidebar nav a > span,
+  .sidebar nav button > span,
+  .nav-report summary > span {
+    font-size: 17px;
+    width: auto;
+  }
+
+  .nav-label,
+  .side-note {
+    display: none;
+  }
+
+  .sidebar-bottom {
+    padding: 0;
+    position: absolute;
+    right: 24px;
+    top: 15px;
+  }
+
+  .logout {
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .workspace {
+    margin: 0;
+  }
+
+  .topbar {
+    min-height: 65px;
+  }
+
+  .nav-report {
+    position: relative;
+  }
+
+  .nav-report[open] {
+    background: #f4f6f9;
+    border-radius: 8px;
+  }
+
+  .nav-report button {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+  }
+
+  .hero-art {
+    right: 3%;
+  }
+
+  .login-layout {
+    grid-template-columns: 0.9fr 1fr;
+  }
+
+  .login-intro {
+    padding: 30px;
+  }
+
+  .intro-copy {
+    margin-top: 60px;
+  }
+
+  .intro-copy h1 {
+    font-size: 37px;
+  }
+
+  .login-panel {
+    padding: 40px 30px;
+  }
+
+  .book-one {
+    left: 3%;
+  }
+
+  .book-two {
+    left: 40%;
+  }
+
+  .orbit {
+    left: 0;
+  }
+
+  .login-foot {
+    display: block;
+  }
+
+  .login-foot span {
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-layout {
+    display: block;
+  }
+
+  .login-intro {
+    padding: 25px;
+  }
+
+  .intro-copy {
+    margin-top: 30px;
+  }
+
+  .intro-copy h1 {
+    font-size: 36px;
+  }
+
+  .intro-copy > p:last-child {
+    font-size: 12px;
+  }
+
+  .book-scene,
+  .login-foot {
+    display: none;
+  }
+
+  .login-panel {
+    padding: 35px 25px;
+  }
+
+  .login-form-wrap {
+    max-width: 100%;
+  }
+
+  .login-form-wrap h2 {
+    font-size: 28px;
+  }
+
+  .login-intro .eyebrow {
+    font-size: 8px;
+  }
+
+  .sidebar {
+    padding: 17px;
+  }
+
+  .sidebar nav {
+    gap: 0;
+  }
+
+  .sidebar nav > a,
+  .sidebar nav > button,
+  .nav-report summary {
+    font-size: 10px;
+    gap: 6px;
+    padding: 7px 8px;
+  }
+
+  .sidebar-bottom {
+    right: 12px;
+    top: 15px;
+  }
+
+  .topbar {
+    padding: 14px 19px;
+  }
+
+  .topbar > span {
+    max-width: 150px;
+  }
+
+  .topbar > span .muted {
+    display: block;
+  }
+
+  .profile {
+    gap: 8px;
+  }
+
+  .profile strong {
+    font-size: 11px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  main:not(.login-layout) {
+    padding: 25px 18px;
+  }
+
+  .page-heading {
+    display: block;
+    margin-bottom: 22px;
+  }
+
+  .page-heading > .primary {
+    margin-top: 17px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .hero {
+    padding: 27px 23px;
+    min-height: 260px;
+  }
+
+  .hero h2 {
+    font-size: 33px;
+  }
+
+  .hero-art {
+    opacity: 0.27;
+    right: -100px;
+    pointer-events: none;
+  }
+
+  .hero > div:first-child {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero p {
+    font-size: 11px;
+  }
+
+  .stats {
+    gap: 8px;
+    margin: 15px 0;
+  }
+
+  .stats article {
+    padding: 16px 12px;
+  }
+
+  .stat-icon {
+    display: none;
+  }
+
+  .stats p {
+    font-size: 10px;
+  }
+
+  .stats strong {
+    font-size: 25px;
+  }
+
+  .stats small {
+    font-size: 9px;
+  }
+
+  .dashboard-grid,
+  .tracking-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 19px;
+  }
+
+  .section-heading h2 {
+    font-size: 16px;
+  }
+
+  .section-heading > .text-button {
+    font-size: 10px;
+  }
+
+  .search-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sample-row {
+    gap: 7px;
+  }
+
+  .stock-overview {
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 0;
+  }
+
+  .stock-overview strong {
+    font-size: 24px;
+  }
+
+  .stock-overview span {
+    font-size: 10px;
+  }
+
+  .filter-row {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .form-grid {
+    gap: 12px;
+  }
+
+  .empty-state {
+    margin: 20px 0;
+    padding: 30px 15px;
+  }
+
+  .empty-state h2 {
+    font-size: 19px;
+  }
+
+  footer {
+    padding: 18px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  footer span:last-child {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  dialog {
+    padding: 22px;
+  }
+
+  .tracking-summary dl {
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  button,
+  a {
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .card,
+  .hero,
+  .stats {
+    animation: appear 0.3s ease-out;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="SITTA: simulasi informasi stok dan tracking distribusi bahan ajar Universitas Terbuka." />
+  <title>Masuk | SITTA</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/login.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <style>
+
+  </style>
+</head>
+
+<body data-page="login">
+  <a class="skip" href="#main">Lewati navigasi</a>
+
+  <main id="main" class="login-layout">
+    <section class="login-intro" aria-labelledby="welcome-title">
+      <div class="brand light">
+        <span class="brand-icon">S</span><span>SITTA<small>BAHAN AJAR · UT</small></span>
+      </div>
+      <div class="intro-copy">
+        <p class="eyebrow">SISTEM INFORMASI TIRAS & TRANSAKSI BAHAN AJAR</p>
+        <h1 id="welcome-title">Dari bahan ajar,<br />menuju masa depan.</h1>
+        <p>
+          Kelola ketersediaan bahan ajar dan pantau perjalanan pengiriman
+          dalam satu ruang kerja.
+        </p>
+      </div>
+      <div class="book-scene" aria-label="Koleksi bahan ajar Universitas Terbuka">
+        <div class="orbit"></div>
+        <img class="book book-one" src="img/manajemen_keuangan.jpg" alt="Sampul Manajemen Keuangan" /><img
+          class="book book-two" src="img/kepemimpinan.jpg" alt="Sampul Kepemimpinan" /><span class="scene-tag">Ilmu yang
+          terus bergerak ↗</span>
+      </div>
+      <p class="login-foot">
+        UNIVERSITAS TERBUKA <span>Pendidikan untuk semua.</span>
+      </p>
+    </section>
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-form-wrap">
+        <span class="pill">PORTAL UT-DAERAH</span>
+        <h2 id="login-title">Selamat datang kembali.</h2>
+        <p class="muted">Masuk untuk mengelola bahan ajar Anda.</p>
+        <form id="login-form" novalidate>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="nama@ut.ac.id" autocomplete="username" required />
+          <div class="label-row">
+            <label for="password">Password</label>
+            <button type="button" class="text-button" id="forgot-open">
+              Lupa password?
+            </button>
+          </div>
+          <div class="password-field">
+            <input id="password" name="password" type="password" placeholder="Masukkan password"
+              autocomplete="current-password" required />
+            <button id="toggle-password" type="button" aria-label="Tampilkan password" aria-pressed="false">
+              Lihat
+            </button>
+          </div>
+          <p id="login-error" class="error" role="alert"></p>
+          <button class="primary full" type="submit">
+            Masuk ke SITTA <span aria-hidden="true">→</span>
+          </button>
+        </form>
+        <p class="register-prompt">
+          Belum punya akun?
+          <button class="text-button" id="register-open">Daftar akun</button>
+        </p>
+
+        <div class="demo-note" style="border-left: 3px solid #d3a84f">
+          <strong>Akun demo untuk praktikum</strong>
+          <p>rina@ut.ac.id <span> / </span> rina123</p>
+          <button type="button" class="text-button" id="fill-demo">
+            Gunakan akun demo →
+          </button>
+        </div>
+
+        <p class="small muted">
+          Simulasi front-end. Gunakan data dan password contoh.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="register-dialog" aria-labelledby="register-title">
+    <div class="dialog-head">
+      <h2 id="register-title">Daftar akun demo</h2>
+      <button type="button" class="icon-button" data-close aria-label="Tutup pendaftaran">
+        x
+      </button>
+    </div>
+    <p class="muted">
+      Akun disimpan pada browser ini untuk simulasi praktikum.
+    </p>
+    
+    <form id="register-form" novalidate>
+      <label for="reg-name">Nama lengkap</label>
+      <input id="reg-name" name="nama" autocomplete="name" required maxlength="80" />
+
+      <label for="reg-email">Email</label>
+      <input id="reg-email" name="email" type="email" autocomplete="email" required />
+      <label for="reg-password">Password demo (minimal 6 karakter)</label>
+      <input id="reg-password" name="password" type="password" autocomplete="new-password" required minlength="6" />
+
+      <label for="reg-confirm">Konfirmasi password</label>
+      <input id="reg-confirm" name="confirm" type="password" autocomplete="new-password" required />
+
+      <p class="error" role="alert" id="register-error"></p>
+      
+      <button class="primary full">Buat akun</button>
+    </form>
+  </dialog>
+
+  <dialog id="forgot-dialog" aria-labelledby="forgot-title">
+    <div class="dialog-head">
+      <h2 id="forgot-title">Lupa password</h2>
+      <button type="button" class="icon-button" data-close aria-label="Tutup lupa password">
+        x
+      </button>
+    </div>
+    <p class="muted">
+      Masukkan email terdaftar untuk mencoba alur pemulihan.
+    </p>
+    <form id="forgot-form" novalidate>
+      <label for="forgot-email">Email</label><input id="forgot-email" name="email" type="email" required
+        autocomplete="email" />
+      <p id="forgot-message" role="status"></p>
+      <button class="primary full">Periksa email</button>
+    </form>
+  </dialog>
+
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-head">
+      <h2 id="info-title">Informasi</h2>
+      <button type="button" class="icon-button" data-close aria-label="Tutup dialog">
+        x
+      </button>
+    </div>
+    <div id="info-body"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+
+</html>

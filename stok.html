@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SITTA: simulasi informasi stok dan tracking distribusi bahan ajar Universitas Terbuka.">
+  <title>Informasi bahan ajar | SITTA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/laporan.js" defer></script>
+  <script src="js/stok.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+
+<body data-page="stok">
+  <a class="skip" href="#main">Lewati navigasi</a>
+
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-icon" aria-hidden="true">S</span>
+      <span>SITTA<small> BAHAN AJAR · UT</small>
+      </span>
+    </a>
+    <p class="nav-label">RUANG KERJA</p>
+
+    <nav aria-label="Menu utama">
+      <a href="dashboard.html">
+        <span aria-hidden="true">◫</span>
+        Ringkasan</a>
+      <a href="stok.html" aria-current="page">
+        <span aria-hidden="true">▤</span>Informasi bahan ajar
+      </a>
+      <a href="tracking.html">
+        <span aria-hidden="true">↗</span>
+        Tracking pengiriman</a>
+      <details class="nav-report">
+        <summary>
+          <span aria-hidden="true">▥</span>
+          Laporan
+        </summary>
+        <button data-report="monitoring">Monitoring progress DO</button>
+        <button data-report="rekap">Rekap bahan ajar</button>
+      </details>
+      <button data-report="histori">
+        <span aria-hidden="true">◷</span>Histori
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="side-note">
+        <strong>Belajar tanpa batas.</strong>
+        <p>Bahan ajar yang tepat, sampai ke tujuan.</p>
+      </div>
+      <button id="logout" class="logout">
+        Keluar akun
+        <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar">
+      <span>Universitas Terbuka
+        <span class="muted">/ Informasi bahan ajar</span>
+      </span>
+
+      <div class="profile">
+        <span class="avatar" aria-hidden="true" id="avatar">U</span>
+        <div>
+          <strong id="user-name">Pengguna</strong><small id="user-role">UT-Daerah</small>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow">KOLEKSI / KETERSEDIAAN</p>
+          <h1>Informasi bahan ajar<span class="gold">.</span></h1>
+          <p class="muted">Kelola koleksi dan ketersediaan stok di setiap lokasi.</p>
+        </div><button id="add-stock" class="primary">+ Tambah bahan ajar</button>
+      </section>
+      <section class="stock-overview">
+        <div>
+          <strong id="stock-titles">0</strong><span>Judul bahan ajar</span>
+        </div>
+        <div>
+          <strong id="stock-total">0</strong><span>Total eksemplar</span>
+        </div>
+        <div>
+          <strong id="stock-locations">0</strong><span>Lokasi penyimpanan</span>
+        </div>
+      </section>
+      <section class="card stock-card" aria-labelledby="stock-heading">
+        <div class="section-heading">
+          <h2 id="stock-heading">Daftar bahan ajar</h2><span class="pill">KATALOG UT</span>
+        </div>
+        <div class="filter-row">
+          <div>
+            <label for="stock-search">Cari bahan ajar</label>
+            <input id="stock-search" type="search" placeholder="Cari judul atau kode bahan ajar…">
+          </div>
+          <div>
+            <label for="location-filter">Lokasi</label>
+            <select id="location-filter">
+              <option value="">Semua lokasi</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <caption class="sr-only">Daftar stok bahan ajar Universitas Terbuka</caption>
+            <thead>
+              <tr>
+                <th scope="col">Bahan ajar</th>
+                <th scope="col">Kode lokasi</th>
+                <th scope="col">Jenis</th>
+                <th scope="col">Edisi</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Ketersediaan</th>
+              </tr>
+            </thead>
+            <tbody id="stock-body"></tbody>
+          </table>
+        </div>
+
+        <p id="stock-count" class="small muted" aria-live="polite"></p>
+      </section>
+
+      <dialog id="stock-dialog" aria-labelledby="stock-dialog-title">
+        <div class="dialog-head">
+          <h2 id="stock-dialog-title">Tambah bahan ajar</h2><button type="button" class="icon-button" data-close
+            aria-label="Tutup tambah bahan ajar">x</button>
+        </div>
+        <p class="muted">Tambahkan koleksi dan jumlah stok awalnya.</p>
+
+        <form id="stock-form" novalidate>
+          <div class="form-grid">
+            <div>
+              <label for="item-code">Kode barang</label>
+              <input id="item-code" name="kodeBarang" required maxlength="24" placeholder="Contoh: EKMA4111">
+            </div>
+            <div>
+              <label for="item-location">Kode lokasi</label>
+              <input id="item-location" name="kodeLokasi" required maxlength="24" placeholder="Contoh: 0JKT01">
+            </div>
+          </div>
+
+          <label for="item-name">Nama bahan ajar</label>
+          <input id="item-name" name="namaBarang" required maxlength="120">
+          <div class="form-grid">
+            <div>
+              <label for="item-type">Jenis barang</label>
+              <select id="item-type" name="jenisBarang">
+                <option>BMP</option>
+                <option>Modul</option>
+                <option>Panduan</option>
+              </select>
+            </div>
+            <div>
+              <label for="item-edition">Edisi</label>
+              <input id="item-edition" name="edisi" type="number" min="1" max="999" step="1" required>
+            </div>
+          </div>
+          <label for="item-stock">Jumlah stok</label><input id="item-stock" name="stok" type="number" min="0"
+            max="1000000" step="1" required>
+          <p id="stock-error" class="error" role="alert"></p>
+          <button class="primary full" type="submit">Simpan bahan ajar</button>
+        </form>
+      </dialog>
+    </main>
+    
+    <footer>SITTA <span>Simulasi akademik · Tugas Praktik 1</span><span>HTML / CSS / JavaScript</span></footer>
+  </div>
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-head">
+      <h2 id="info-title">Informasi</h2><button type="button" class="icon-button" data-close
+        aria-label="Tutup dialog">×</button>
+    </div>
+    <div id="info-body"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+
+</body>
+
+</html>

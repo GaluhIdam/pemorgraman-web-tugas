@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="SITTA: simulasi informasi stok dan tracking distribusi bahan ajar Universitas Terbuka." />
+  <title>Ringkasan | SITTA</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/laporan.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+
+<body data-page="dashboard">
+  <a class="skip" href="#main">Lewati navigasi</a>
+
+  <aside class="sidebar">
+
+    <a href="dashboard.html" class="brand">
+      <span class="brand-icon" aria-hidden="true"> S</span>
+      <span>SITTA<small>BAHAN AJAR · UT</small>
+      </span>
+    </a>
+
+    <p class="nav-label">RUANG KERJA</p>
+
+    <nav aria-label="Menu utama">
+      <a href="dashboard.html" aria-current="page">
+        <span aria-hidden="true">◫</span>Ringkasan</a>
+      <a href="stok.html">
+        <span aria-hidden="true">▤</span>
+        Informasi bahan ajar</a>
+      <a href="tracking.html">
+        <span aria-hidden="true">↗</span>Tracking pengiriman</a>
+
+      <details class="nav-report">
+        <summary><span aria-hidden="true">▥</span> Laporan</summary>
+        <button data-report="monitoring">Monitoring progress DO</button>
+        <button data-report="rekap">Rekap bahan ajar</button>
+      </details>
+
+      <button data-report="histori">
+        <span aria-hidden="true">◷</span>Histori transaksi
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="side-note">
+        <strong>Belajar tanpa batas.</strong>
+        <p>Bahan ajar yang tepat, sampai ke tujuan.</p>
+      </div>
+      <button id="logout" class="logout">
+        Keluar akun <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+
+  </aside>
+  <div class="workspace">
+
+    <header class="topbar">
+      <span>Universitas Terbuka <span class="muted">/ Ringkasan</span></span>
+      <div class="profile">
+        <span class="avatar" aria-hidden="true" id="avatar">U</span>
+        <div>
+          <strong id="user-name">Pengguna</strong>
+          <small id="user-role">UT-Daerah</small>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <section class="page-heading">
+        <div>
+          <p class="eyebrow" id="today">RUANG KERJA ANDA</p>
+          <h1>
+            <span id="greeting">Selamat datang</span>,
+            <span id="first-name">Rekan UT</span><span class="gold">.</span>
+          </h1>
+          <p class="muted">
+            Semua informasi bahan ajar, dalam satu pandangan.
+          </p>
+        </div>
+        <span class="status-dot">Sistem siap digunakan</span>
+      </section>
+
+      <section class="hero">
+        <div>
+          <span class="eyebrow">DISTRIBUSI BAHAN AJAR</span>
+          <h2>Pastikan ilmu<br />sampai ke tujuan.</h2>
+          <p>
+            Pantau stok dan ikuti perjalanan bahan ajar<br />dengan informasi
+            yang mudah diakses.
+          </p>
+          <a class="button cream" href="tracking.html">Lacak pengiriman <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-ring"></div>
+          <img src="img/manajemen_keuangan.jpg" alt="" />
+          <img src="img/kepemimpinan.jpg" alt="" />
+          <span class="art-label">TERHUBUNG MELALUI ILMU</span>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Ringkasan data">
+        <article>
+          <span class="stat-icon">▤</span>
+          <p>Judul bahan ajar</p>
+          <strong id="stat-titles">0</strong><small>Koleksi tersedia</small>
+        </article>
+        <article>
+          <span class="stat-icon">▦</span>
+          <p>Total stok</p>
+          <strong id="stat-stock">0</strong><small>Eksemplar bahan ajar</small>
+        </article>
+        <article>
+          <span class="stat-icon">↗</span>
+          <p>Data pengiriman</p>
+          <strong id="stat-deliveries">0</strong><small>Delivery order tercatat</small>
+        </article>
+      </section>
+
+      <div class="dashboard-grid">
+        <section class="card">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">AKSES CEPAT</p>
+              <h2>Mulai dari sini</h2>
+            </div>
+          </div>
+          <a class="quick-link" href="stok.html"><span class="quick-icon">▤</span>
+            <div>
+              <h3>Informasi bahan ajar</h3>
+              <p>Lihat koleksi dan tambahkan stok baru.</p>
+            </div>
+            <span>↗</span>
+          </a><a class="quick-link" href="tracking.html"><span class="quick-icon">↗</span>
+            <div>
+              <h3>Tracking pengiriman</h3>
+              <p>Cari perjalanan paket melalui nomor DO.</p>
+            </div>
+            <span>↗</span>
+          </a><button class="quick-link" data-report="rekap">
+            <span class="quick-icon">▥</span><span><strong>Rekap bahan ajar</strong><span
+                class="quick-description">Ringkasan ketersediaan per lokasi.</span></span><span>↗</span>
+          </button>
+        </section>
+
+        <section class="card">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">DISTRIBUSI</p>
+              <h2>Pengiriman tercatat</h2>
+            </div>
+            <a class="text-button" href="tracking.html">Lihat semua ↗</a>
+          </div>
+          <div id="recent-deliveries"></div>
+          <p class="small muted">
+            Menggunakan data contoh yang disediakan untuk praktikum.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      SITTA <span>Simulasi akademik · Tugas Praktik 1</span><span>HTML / CSS / JavaScript</span>
+    </footer>
+  </div>
+
+  <dialog id="info-dialog" aria-labelledby="info-title">
+    <div class="dialog-head">
+      <h2 id="info-title">Informasi</h2>
+      <button type="button" class="icon-button" data-close aria-label="Tutup dialog">
+        x
+      </button>
+    </div>
+    <div id="info-body"></div>
+  </dialog>
+  
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+
+</html>
